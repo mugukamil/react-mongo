@@ -28,7 +28,7 @@ class CommentBox extends Component {
     _addComment(author, body) {
         const comment = {author, body}
 
-        fetch('http://localhost:3001/api/comments', {
+        fetch('/api/comments', {
             headers: {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/json'
@@ -43,9 +43,9 @@ class CommentBox extends Component {
 
     _deleteComment(comment) {
         console.log(comment);
-        fetch(`http://localhost:3001/api/comments/${comment.id}`, { method: 'DELETE' })
-            .then(res => { 
-                this._fetchComments() 
+        fetch(`api/comments/${comment.id}`, { method: 'DELETE' })
+            .then(res => {
+                this._fetchComments()
                 // const comments = [...this.state.comments]
                 // const commentIndex = comments.indexOf(comment)
                 // comments.splice(commentIndex, 1)
@@ -61,8 +61,8 @@ class CommentBox extends Component {
     }
 
     _fetchComments() {
-        fetch('http://localhost:3001/api/comments', { 
-            accept: 'application/json' 
+        fetch('/api/comments', {
+            accept: 'application/json'
         })
         .then(r => r.json())
         .then(comments => {
