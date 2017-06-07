@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.comment-box {
+    text-align: center;
+}
+
+.comment-form {
+    padding: 2em;
+}
+
+.comment-form label {
+    font-size: 2em;
+}
