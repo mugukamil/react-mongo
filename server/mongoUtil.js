@@ -8,7 +8,7 @@ module.exports = {
     },
 
     connect() {
-        client.connect(process.env.MONGODB_URL, (err, db) => {
+        client.connect('mongodb://heroku_jclzrvx9:oj56cvno34isckig6dotsfluup@ds111622.mlab.com:11622/heroku_jclzrvx9', (err, db) => {
             if (err) {
                 console.log(`Error connecting to mongo ${err}`)
                 process.exit(1)
