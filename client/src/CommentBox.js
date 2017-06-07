@@ -43,7 +43,7 @@ class CommentBox extends Component {
 
     _deleteComment(comment) {
         console.log(comment);
-        fetch(`/api/comments/${comment.id}`, { method: 'DELETE' })
+        fetch(`api/comments/${comment.id}`, { method: 'DELETE' })
             .then(res => {
                 this._fetchComments()
                 // const comments = [...this.state.comments]
