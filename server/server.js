@@ -73,4 +73,4 @@ app.delete('/api/comments/:id', jsonParser, (req, res) => {
     })
 })
 
-app.listen(3001, () => console.log('listening on 3001'))
+app.listen(process.env.PORT || 8080, () => console.log('listening on 3001'))
