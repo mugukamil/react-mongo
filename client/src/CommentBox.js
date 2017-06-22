@@ -27,6 +27,8 @@ class CommentBox extends Component {
 
     _addComment(author, body) {
         const comment = {author, body}
+        
+        console.log(comment);
 
         fetch('/api/comments', {
             headers: {
