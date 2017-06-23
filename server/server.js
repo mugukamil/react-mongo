@@ -28,16 +28,14 @@ app.get('/api/comments', (req, res) => {
 })
 
 app.post('/api/comments', jsonParser, (req, res) => {
+    console.log(req.body);
     let newComment = req.body || {}
 
     if (!newComment.author || !newComment.body) {
-        console.log(newComment);
         res.sendStatus(400)
     }
 
     let comments = mongoUtil.comments()
-    // let query = { _id: commentId }
-    // let update = { $push: { newComment } }
 
     comments.insertOne(newComment, (err, result) => {
         if (err) {
