@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-    res.sendfile('../client/build/index.html');
+    res.sendFile('../client/build/index.html');
 });
 
 app.get('/api/comments', (req, res) => {
