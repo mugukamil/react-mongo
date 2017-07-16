@@ -15,6 +15,10 @@ app.use((req, res, next) => {
     next()
 })
 
+app.get('/', (req, res) => {
+    res.sendfile('../client/build/index.html');
+});
+
 app.get('/api/comments', (req, res) => {
     let comments = mongoUtil.comments()
 
